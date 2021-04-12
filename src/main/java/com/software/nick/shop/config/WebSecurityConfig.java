@@ -25,6 +25,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                     .antMatchers("/admin").hasAnyRole("ADMIN", "USER")//doesn't work probably because of connecting roles via another table
                     .antMatchers("/", "/registration").permitAll()
+                    .antMatchers("/report").permitAll()
                     .anyRequest().authenticated()
                 .and()
                     .formLogin()
